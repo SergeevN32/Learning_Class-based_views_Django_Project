@@ -1,0 +1,16 @@
+{% extends 'feedback/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Список отзывов
+{% endblock %}
+
+{% block content %}
+    <h2>Список отзывов</h2>
+    <ol>
+        {% for feedback in object_list %}
+            <li>id: {{ feedback.pk }} {{ feedback.name }} - {{ feedback.surname }}: {{ feedback.rating }}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

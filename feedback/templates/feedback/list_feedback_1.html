@@ -1,0 +1,28 @@
+{% extends 'feedback/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Список отзывов
+{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отзыв</th>
+        <th>Рейтинг</th>
+    </tr>
+    {% for feed in feedbacks %}
+    <tr>
+        <div>
+            <td>{{ feed.name }}</td>
+            <td>{{ feed.surname }}</td>
+            <td>{{ feed.feedback }}</td>
+            <td>{{ feed.rating }}</td>
+        </div>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
